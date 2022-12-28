@@ -1,0 +1,32 @@
+//https://leetcode.com/problems/sqrtx/
+class Solution {
+
+        public int mySqrt(int target) {
+
+        boolean found = false;
+        double start = 1;
+        int ans= -1;
+        while (!found) {
+            if (start * start == target) {
+                return (int)start;
+            } else if (start * start > target) {
+                ans = (int) getSqrt(target, start - 1, start);
+                return ans;
+            }
+            start++;
+        }
+        return ans;
+    }
+
+    public double getSqrt(int target, double from, double to) {
+        double mid = (from + to) / 2;
+        if (mid * mid == target || Math.abs( target - (mid * mid)) < 0.00001) {
+            return Math.floor(mid);
+        } else if (mid * mid > target) {
+            return getSqrt(target, from, mid);
+        } else {
+            return getSqrt(target, mid, to);
+        }
+
+    }
+}
