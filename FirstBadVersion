@@ -1,0 +1,29 @@
+/* The isBadVersion API is defined in the parent class VersionControl.
+      boolean isBadVersion(int version); */
+
+/*https://leetcode.com/problems/first-bad-version
+Runtime: 16 ms, faster than 97.90% of Java online submissions for First Bad Version.
+Memory Usage: 38.7 MB, less than 97.24% of Java online submissions for First Bad Version.
+*/
+
+public class Solution extends VersionControl {
+    public int firstBadVersion(int n) {
+        int start =1;
+        int end = n;
+        int possibleAns = start;
+
+        while(start<=end){
+            int mid = start + (end-start)/2;
+            boolean bad = isBadVersion(mid);
+            if(bad){
+                possibleAns = mid;
+                end = mid-1;
+            }
+            else{
+                start = mid +1;
+            }
+        }
+                    return possibleAns;
+
+    }
+}
