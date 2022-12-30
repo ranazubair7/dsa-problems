@@ -19,7 +19,7 @@ class Solution {
     }
 
     public double getSqrt(int target, double from, double to) {
-        double mid = (from + to) / 2;
+        double mid = from + (to-from) / 2;
         if (mid * mid == target || Math.abs( target - (mid * mid)) < 0.00001) {
             return Math.floor(mid);
         } else if (mid * mid > target) {
