@@ -1,6 +1,6 @@
 /**
  * To find out maximum difference of arr[j] - arr[i] such that j>i
- * time complexity of this solution is O(n)
+ * time complexity of this solution is O(n).
  */
 public class FindMaxDifference {
 
