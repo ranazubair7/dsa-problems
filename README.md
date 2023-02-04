@@ -1,2 +1,2 @@
 # dsa-problems
-Repository for the solutions to all the problems that I practice on different platforms like leetcode, hacker rank 
+Repository for the solutions to different problems of DSA on platforms like leetcode, hacker rank, GFG 
